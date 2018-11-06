@@ -30,19 +30,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func toggleSounds() {
         soundOn = !soundOn
         if (soundOn) {
-            enableSounds.state = NSControl.StateValue.on
+            enableSounds.state = .on
         } else {
-            enableSounds.state = NSControl.StateValue.off
+            enableSounds.state = .off
         }
     }
     
     func makeANoise(filename: String) {
         if (soundOn) {
             let bundle = Bundle.main
-            let audioFilePath = bundle.path(forResource:filename, ofType: "wav")
-            
-            if audioFilePath != nil {
-                let audioFileUrl = NSURL.fileURL(withPath:audioFilePath!)
+            if let audioFilePath = bundle.path(forResource: filename, ofType: "wav") {
+                let audioFileUrl = NSURL.fileURL(withPath: audioFilePath)
                 
                 do {
                     try audioPlayer = AVAudioPlayer(contentsOf: audioFileUrl)
@@ -88,21 +86,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func constructMenu() {
         let menu = NSMenu()
         
-        enableSounds = NSMenuItem(title: "Sounds", action: #selector(AppDelegate.toggleSounds), keyEquivalent: "s")
+        enableSounds = NSMenuItem(title: "Sounds", action: #selector(toggleSounds), keyEquivalent: "s")
         menu.addItem(enableSounds)
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
-        enableSounds.state = NSControl.StateValue.on
+        enableSounds.state = .on
         statusItem.menu = menu
     }
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {      
-        let timer = Timer.init(timeInterval: 1, target: self,   selector: (#selector(updateCounters)), userInfo: nil, repeats: true)
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let timer = Timer(timeInterval: 1, target: self, selector: #selector(updateCounters), userInfo: nil, repeats: true)
         
         updateCounters()
         constructMenu()
         
-        RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+        RunLoop.main.add(timer, forMode: .common)
     }
 }
