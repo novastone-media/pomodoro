@@ -3,17 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2476812111BA8000B7DAE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4A2476802111BA8000B7DAE0 /* LICENSE */; };
 		4AD430352110B916001B8339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD430342110B916001B8339 /* AppDelegate.swift */; };
 		4AD430372110B916001B8339 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD430362110B916001B8339 /* ViewController.swift */; };
 		4AD430392110B917001B8339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD430382110B917001B8339 /* Assets.xcassets */; };
 		4AD4303C2110B917001B8339 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AD4303A2110B917001B8339 /* Main.storyboard */; };
+		4ADAC6622191CE83008020F9 /* start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4ADAC6602191CE82008020F9 /* start.wav */; };
+		4ADAC6632191CE83008020F9 /* end.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4ADAC6612191CE83008020F9 /* end.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A2476802111BA8000B7DAE0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4AD430312110B916001B8339 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD430342110B916001B8339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AD430362110B916001B8339 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -21,6 +25,9 @@
 		4AD4303B2110B917001B8339 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AD4303D2110B917001B8339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AD4303E2110B917001B8339 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
+		4ADAC65F2191CCBA008020F9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4ADAC6602191CE82008020F9 /* start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start.wav; sourceTree = "<group>"; };
+		4ADAC6612191CE83008020F9 /* end.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = end.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,9 +41,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AC758C92111A8E400F9AFAD /* Supporting Documents */ = {
+			isa = PBXGroup;
+			children = (
+				4ADAC6612191CE83008020F9 /* end.wav */,
+				4ADAC6602191CE82008020F9 /* start.wav */,
+			);
+			path = "Supporting Documents";
+			sourceTree = "<group>";
+		};
 		4AD430282110B915001B8339 = {
 			isa = PBXGroup;
 			children = (
+				4ADAC65F2191CCBA008020F9 /* README.md */,
+				4A2476802111BA8000B7DAE0 /* LICENSE */,
 				4AD430332110B916001B8339 /* Pomodoro */,
 				4AD430322110B916001B8339 /* Products */,
 			);
@@ -53,6 +71,7 @@
 		4AD430332110B916001B8339 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				4AC758C92111A8E400F9AFAD /* Supporting Documents */,
 				4AD430342110B916001B8339 /* AppDelegate.swift */,
 				4AD430362110B916001B8339 /* ViewController.swift */,
 				4AD430382110B917001B8339 /* Assets.xcassets */,
@@ -95,11 +114,17 @@
 				TargetAttributes = {
 					4AD430302110B915001B8339 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
 			buildConfigurationList = 4AD4302C2110B915001B8339 /* Build configuration list for PBXProject "Pomodoro" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -121,6 +146,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2476812111BA8000B7DAE0 /* LICENSE in Resources */,
+				4ADAC6632191CE83008020F9 /* end.wav in Resources */,
+				4ADAC6622191CE83008020F9 /* start.wav in Resources */,
 				4AD430392110B917001B8339 /* Assets.xcassets in Resources */,
 				4AD4303C2110B917001B8339 /* Main.storyboard in Resources */,
 			);
@@ -269,17 +297,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 282DR45FFU;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.novastonemedia.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -287,17 +318,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 282DR45FFU;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.novastonemedia.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
