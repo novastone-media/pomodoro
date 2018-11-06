@@ -97,8 +97,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = menu
     }
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {      
-        let timer = Timer.init(timeInterval: 1, target: self,   selector: (#selector(updateCounters)), userInfo: nil, repeats: true)
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let timer = Timer(timeInterval: 1, target: self, selector: #selector(updateCounters), userInfo: nil, repeats: true)
         
         updateCounters()
         constructMenu()
