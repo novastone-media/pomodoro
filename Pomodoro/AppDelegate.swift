@@ -86,7 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func constructMenu() {
         let menu = NSMenu()
         
-        enableSounds = NSMenuItem(title: "Sounds", action: #selector(AppDelegate.toggleSounds), keyEquivalent: "s")
+        enableSounds = NSMenuItem(title: "Sounds", action: #selector(toggleSounds), keyEquivalent: "s")
         menu.addItem(enableSounds)
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
