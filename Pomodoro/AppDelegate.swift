@@ -39,10 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func makeANoise(filename: String) {
         if (soundOn) {
             let bundle = Bundle.main
-            let audioFilePath = bundle.path(forResource:filename, ofType: "wav")
-            
-            if audioFilePath != nil {
-                let audioFileUrl = NSURL.fileURL(withPath:audioFilePath!)
+            if let audioFilePath = bundle.path(forResource: filename, ofType: "wav") {
+                let audioFileUrl = NSURL.fileURL(withPath: audioFilePath)
                 
                 do {
                     try audioPlayer = AVAudioPlayer(contentsOf: audioFileUrl)
