@@ -1,7 +1,8 @@
 # macOS Pomodoro Timer
 
 Sounds from [Dusty Room](http://dustyroom.com/free-casual-game-sounds/) and licenced under [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
-Graphics Copyright 2018 Twitter, Inc and other contributors and licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+Tomato Graphic - Copyright 2018 Twitter, Inc and other contributors and licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 Copyright © Novastone Media Limited 2018
 
