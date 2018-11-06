@@ -30,9 +30,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func toggleSounds() {
         soundOn = !soundOn
         if (soundOn) {
-            enableSounds.state = NSControl.StateValue.on
+            enableSounds.state = .on
         } else {
-            enableSounds.state = NSControl.StateValue.off
+            enableSounds.state = .off
         }
     }
     
@@ -93,7 +93,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
-        enableSounds.state = NSControl.StateValue.on
+        enableSounds.state = .on
         statusItem.menu = menu
     }
 
@@ -103,6 +103,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         updateCounters()
         constructMenu()
         
-        RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+        RunLoop.main.add(timer, forMode: .common)
     }
 }
