@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A044E78220064B700F71447 /* end.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4A044E76220064B700F71447 /* end.caf */; };
+		4A044E79220064B700F71447 /* start.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4A044E77220064B700F71447 /* start.caf */; };
 		4A2476812111BA8000B7DAE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4A2476802111BA8000B7DAE0 /* LICENSE */; };
 		4AD430352110B916001B8339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD430342110B916001B8339 /* AppDelegate.swift */; };
 		4AD430392110B917001B8339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD430382110B917001B8339 /* Assets.xcassets */; };
 		4AD4303C2110B917001B8339 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AD4303A2110B917001B8339 /* Main.storyboard */; };
-		4ADAC6622191CE83008020F9 /* start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4ADAC6602191CE82008020F9 /* start.wav */; };
-		4ADAC6632191CE83008020F9 /* end.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4ADAC6612191CE83008020F9 /* end.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A044E76220064B700F71447 /* end.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = end.caf; sourceTree = "<group>"; };
+		4A044E77220064B700F71447 /* start.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = start.caf; sourceTree = "<group>"; };
 		4A2476802111BA8000B7DAE0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4AD430312110B916001B8339 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD430342110B916001B8339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -24,8 +26,6 @@
 		4AD4303D2110B917001B8339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AD4303E2110B917001B8339 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
 		4ADAC65F2191CCBA008020F9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4ADAC6602191CE82008020F9 /* start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start.wav; sourceTree = "<group>"; };
-		4ADAC6612191CE83008020F9 /* end.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = end.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,8 +42,8 @@
 		4AC758C92111A8E400F9AFAD /* Supporting Documents */ = {
 			isa = PBXGroup;
 			children = (
-				4ADAC6612191CE83008020F9 /* end.wav */,
-				4ADAC6602191CE82008020F9 /* start.wav */,
+				4A044E76220064B700F71447 /* end.caf */,
+				4A044E77220064B700F71447 /* start.caf */,
 			);
 			path = "Supporting Documents";
 			sourceTree = "<group>";
@@ -143,9 +143,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A044E78220064B700F71447 /* end.caf in Resources */,
+				4A044E79220064B700F71447 /* start.caf in Resources */,
 				4A2476812111BA8000B7DAE0 /* LICENSE in Resources */,
-				4ADAC6632191CE83008020F9 /* end.wav in Resources */,
-				4ADAC6622191CE83008020F9 /* start.wav in Resources */,
 				4AD430392110B917001B8339 /* Assets.xcassets in Resources */,
 				4AD4303C2110B917001B8339 /* Main.storyboard in Resources */,
 			);
@@ -302,7 +302,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.novastonemedia.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -323,7 +323,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.novastonemedia.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

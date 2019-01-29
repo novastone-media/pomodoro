@@ -8,6 +8,7 @@
 
 import Cocoa
 import AVFoundation
+import UserNotifications
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -16,8 +17,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let calendar = Calendar.current
     var audioPlayer:AVAudioPlayer!
     var enableSounds:NSMenuItem!
+    var enableNotifications:NSMenuItem!
     
     var soundOn = true
+    var notificationOn = true
     
     func makeStartNoise() {
         makeANoise(filename: "start")
@@ -36,11 +39,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    @objc func toggleNotifications() {
+        notificationOn = !notificationOn
+        if (notificationOn) {
+            enableNotifications.state = NSControl.StateValue.on
+        } else {
+            enableNotifications.state = NSControl.StateValue.off
+        }
+    }
+    
     func makeANoise(filename: String) {
         if (soundOn) {
             let bundle = Bundle.main
-            if let audioFilePath = bundle.path(forResource: filename, ofType: "wav") {
-                let audioFileUrl = NSURL.fileURL(withPath: audioFilePath)
+            let audioFilePath = bundle.path(forResource:filename, ofType: "caf")
+            
+            if audioFilePath != nil {
+                let audioFileUrl = NSURL.fileURL(withPath:audioFilePath!)
                 
                 do {
                     try audioPlayer = AVAudioPlayer(contentsOf: audioFileUrl)
@@ -48,6 +62,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 } catch {
                 }
             }
+        }
+    }
+    
+    func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
+        return true
+    }
+    
+    func sendANotification(text: String) {
+        if (notificationOn) {
+            // Create the notification and setup information
+            let notification = NSUserNotification()
+            notification.identifier = "pomodoro" + String(NSDate().timeIntervalSince1970)
+            notification.title = text
+            notification.soundName = nil
+            let notificationCenter = NSUserNotificationCenter.default
+            notificationCenter.deliver(notification)
         }
     }
     
@@ -74,11 +104,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             statusItem.button?.title =  String(format: "☕️ %02d:%02d", minutesLeft, secondsLeft)
             if (isBreak && minutesLeft == 4 && secondsLeft == 59) {
                  makeEndNoise()
+                 sendANotification(text: "Break Time!")
             }
         } else {
             statusItem.button?.title =  String(format: "🍅 %02d:%02d", minutesLeft, secondsLeft)
             if (minutesLeft == 24 && secondsLeft == 59) {
                 makeStartNoise()
+                sendANotification(text: "Work Time!")
             }
         }
     }
@@ -88,10 +120,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         enableSounds = NSMenuItem(title: "Sounds", action: #selector(toggleSounds), keyEquivalent: "s")
         menu.addItem(enableSounds)
+        enableNotifications = NSMenuItem(title: "Notifications", action: #selector(AppDelegate.toggleNotifications), keyEquivalent: "n")
+        menu.addItem(enableNotifications)
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
-        enableSounds.state = .on
+        enableSounds.state = NSControl.StateValue.on
+        enableNotifications.state = NSControl.StateValue.on
         statusItem.menu = menu
     }
 
